@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Abdelhakim A. | Software Engineer & Cloud Specialist</title>
+  <meta name="description" content="Software engineering student specializing in cloud technologies, DevOps, and climate risk modeling based in Casablanca, Morocco.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <meta property="og:title" content="Abdelhakim A">
+  <meta property="og:description" content="Software engineering student specializing in full-stack cloud technologies, DevOps based in Casablanca, Morocco.">
+  <meta property="og:type" content="website">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/terminal.css@0.7.2/dist/terminal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --global-font-size: 15px;
+      --global-line-height: 1.4em;
+      --global-space: 10px;
+      --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+      serif;
+      --mono-font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+      serif;
+      --background-color: #222225;
+      --page-width: 60em;
+      --font-color: #e8e9ed;
+      --invert-font-color: #222225;
+      --secondary-color: #a3abba;
+      --tertiary-color: #a3abba;
+      --primary-color: #62c4ff;
+      --error-color: #ff3c74;
+      --progress-bar-background: #3f3f44;
+      --progress-bar-fill: #62c4ff;
+      --code-bg-color: #3f3f44;
+      --input-style: solid;
+      --display-h1-decoration: none;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--font-color);
+      font-family: var(--font-stack);
+      line-height: var(--global-line-height);
+      font-size: var(--global-font-size);
+    }
+
+    .container {
+      max-width: var(--page-width);
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Nav and Header Styles */
+    .terminal-nav {
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--primary-color);
+      margin-bottom: 30px;
+    }
+
+    .menu-item {
+      color: var(--font-color);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .menu-item:hover, .menu-item.active {
+      color: var(--background-color);
+      background-color: var(--primary-color);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--primary-color);
+    }
+
+    .section-title i {
+      color: var(--primary-color);
+      margin-right: 10px;
+    }
+
+    /* Card Styles */
+    .terminal-card {
+      background-color: #2d2d30;
+      border: 2px solid #62c4ff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .terminal-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .terminal-card header {
+      font-size: 1.2em;
+      color: #222225;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .terminal-card .links {
+      margin-top: 15px;
+    }
+
+    .terminal-card .links a {
+      margin-right: 15px;
+      color: var(--primary-color);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .terminal-card .links a i {
+      margin-right: 5px;
+    }
+
+    .terminal-card .badge {
+      display: inline-block;
+      background-color: #3a3a3d;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+
+    .tech-stack {
+      margin-top: 10px;
+    }
+
+    /* Timeline Styles */
+    .timeline {
+      list-style-type: none;
+      padding-left: 0;
+      position: relative;
+    }
+
+    .timeline:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 6px;
+      width: 2px;
+      background: var(--primary-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      z-index: 1;
+    }
+    
+    /* Skills Styles */
+    .skill-category {
+      margin-bottom: 20px;
+    }
+    
+    .skill-category h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    
+    .skill-bar {
+      background-color: var(--progress-bar-background);
+      height: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+    
+    .skill-level {
+      height: 100%;
+      background-color: var(--primary-color);
+    }
+    
+    .skill-item {
+      margin-bottom: 15px;
+    }
+    
+    .skill-item span {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+    
+    /* Profile Section */
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    @media (min-width: 768px) {
+      .profile-section {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+      }
+    }
+    
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid var(--primary-color);
+      overflow: hidden;
+      margin-bottom: 20px;
+      background-color: #3f3f44;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      color: var(--primary-color);
+    }
+    
+    @media (min-width: 768px) {
+      .profile-image {
+        margin-right: 30px;
+        margin-bottom: 0;
+      }
+    }
+    
+    .profile-content {
+      flex: 1;
+    }
+    
+    .profile-title {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+    
+    .blink {
+      animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid var(--primary-color);
+      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: var(--primary-color) }
+    }
+    
+    .terminal-prompt::before {
+      content: '> ';
+      color: var(--primary-color);
+    }
+    
+    /* Contact section */
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .contact-method {
+      flex: 1 0 calc(50% - 15px);
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background-color: #2d2d30;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    
+    .contact-method:hover {
+      transform: translateY(-3px);
+    }
+    
+    .contact-method i {
+      font-size: 24px;
+      color: var(--primary-color);
+      margin-right: 15px;
+    }
+    
+    /* Project filter */
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .filter-btn {
+      background: #3a3a3d;
+      border: none;
+      color: var(--font-color);
+      padding: 5px 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .filter-btn.active, .filter-btn:hover {
+      background-color: var(--primary-color);
+      color: var(--background-color);
+    }
+    
+    /* Projects grid for larger screens */
+    @media (min-width: 768px) {
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      
+      .terminal-card {
+        margin-bottom: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .terminal-card .card-content {
+        flex: 1;
+      }
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid var(--code-bg-color);
+      color: var(--secondary-color);
+    }
+    
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    
+    .cert-item {
+      background-color: #2d2d30;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 3px solid var(--primary-color);
+    }
+    
+    .cert-item h4 {
+      margin-top: 0;
+      color: var(--primary-color);
+    }
+    
+    .cert-item .issuer {
+      font-style: italic;
+      color: var(--secondary-color);
+    }
+  </style>
+</head>
+<body class="terminal terminal-dark">
+
+<div class="container">
+  <div class="terminal-nav">
+    <header class="terminal-logo">
+      <div class="logo terminal-prompt"><a href="/" class="no-style">Abdelhakim A.</a></div>
+    </header>
+    <nav class="terminal-menu">
+      <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+        <li><a href="#about" class="menu-item active"><span>whoami</span></a></li>
+        <li property="itemListElement" typeof="ListItem"><a href="#skills" property="item" typeof="WebPage" class="menu-item"><span property="name">Skills</span></a></li>
+        <li property="itemListElement" typeof="ListItem"><a href="#projects" property="item" typeof="WebPage" class="menu-item"><span property="name">Projects</span></a></li>
+        <li property="itemListElement" typeof="ListItem"><a href="#education" property="item" typeof="WebPage" class="menu-item"><span property="name">Education</span></a></li>
+        <li property="itemListElement" typeof="ListItem"><a href="#certifications" property="item" typeof="WebPage" class="menu-item"><span property="name">Certs</span></a></li>
+        <li property="itemListElement" typeof="ListItem"><a href="#contact" property="item" typeof="WebPage" class="menu-item"><span property="name">Contact</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section id="about" class="profile-section">
+    <div class="profile-image">
+      <i class="fa-solid fa-user-code">
+        <img src="pixel.png" alt="test">
+      </i> 
+    </div>
+    <div class="profile-content">
+      <div class="profile-title typing">Abdelhakim Aouzou</div>
+      <div class="terminal-prompt">Software Engineering Student | Focusing on Cloud and Devops engineering </div>
+      <p>Based in Casablanca, Morocco</p>
+      <p>👋 I'm a software engineering student with a strong foundation in full-stack development and a growing passion for cloud technologies and DevOps.</p>
+      <p>Currently seeking: <span class="blink">_</span> Internship opportunities to develop my Cloud & DevOps skills</p>
+      <div class="contact-methods">
+        <a href="https://github.com/Abdelhakime6" class="contact-method" target="_blank">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/abdelhakim6/" class="contact-method">
+          <i class="fa fa-envelope"></i>
+          <span>Email</span>
+        </a>
+        <a href="https://www.linkedin.com/in/abdelhakim6/" class="contact-method" target="_blank">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">
+      <i class="fa-solid fa-code-branch"></i>
+      <h2>~$ skills</h2>
+    </div>
+  
+    <div class="skill-category">
+      <h3>💻 Full Stack Development</h3>
+      <div class="skill-item">
+        <span>
+          <strong>Next.js / React</strong>
+          <em>Intermediate</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>Django (Python)</strong>
+          <em>Intermediate</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>Spring Boot (Java)</strong>
+          <em>Intermediate</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>.NET (C#)</strong>
+          <em>Intermediate</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 65%"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="skill-category">
+      <h3>☁️ Cloud & DevOps (Current Focus)</h3>
+      <div class="skill-item">
+        <span>
+          <strong>AWS</strong>
+          <em>Learning</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 45%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>Docker</strong>
+          <em>Intermediate</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>Kubernetes</strong>
+          <em>Exploring</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 20%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>Azure</strong>
+          <em>Beginner</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 30%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>CI/CD (GitHub Actions, Pipelines)</strong>
+          <em>Beginner</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 35%"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="skill-category">
+      <h3>🧠 Programming Languages</h3>
+      <div class="skill-item">
+        <span>
+          <strong>Java</strong>
+          <em>Advanced</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>Python</strong>
+          <em>Intermediate</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>JavaScript</strong>
+          <em>Intermediate</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>C#</strong>
+          <em>Intermediate</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 65%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>C++</strong>
+          <em>Intermediate</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 60%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>TypeScript</strong>
+          <em>Beginner</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 40%"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="skill-category">
+      <h3>📊 Machine Learning & Others</h3>
+      <div class="skill-item">
+        <span>
+          <strong>TensorFlow</strong>
+          <em>Beginner</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 30%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span>
+          <strong>scikit-learn</strong>
+          <em>Beginner</em>
+        </span>
+        <div class="skill-bar">
+          <div class="skill-level" style="width: 30%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="projects">
+    <div class="section-title">
+      <i class="fa-solid fa-folder-open"></i>
+      <h2>~$ projects</h2>
+    </div>
+    
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cloud">Cloud & DevOps</button>
+      <button class="filter-btn" data-filter="web">Web Development</button>
+      <button class="filter-btn" data-filter="ml">Machine Learning</button>
+    </div>
+    
+    <h3 class="terminal-prompt" style="margin-bottom: 20px; color: var(--primary-color);">Cloud, DevOps & ML Learning Projects</h3>
+    
+    <div class="projects-grid">
+      <div class="terminal-card" data-category="cloud">
+        <header>AWS Static Website Deployment</header>
+        <div class="card-content">
+          <p>Learning project deploying a static website using S3, CloudFront, and Route53 with automated deployment through GitHub Actions.</p>
+          <p><strong>My Role:</strong> Cloud Engineer (Learning)</p>
+          <div class="tech-stack">
+            <span class="badge">AWS S3</span>
+            <span class="badge">CloudFront</span>
+            <span class="badge">Route53</span>
+            <span class="badge">GitHub Actions</span>
+          </div>
+        </div>
+        <div class="links">
+          <a href="#"><i class="fa-solid fa-code"></i> In Development</a>
+        </div>
+      </div>
+      
+      
+      
+      <div class="terminal-card" data-category="ml cloud">
+        <header> Climate Risk Analyzer</header>
+        <div class="card-content">
+          <p>A climate risk model for analyzing drought and flood risks, with plans to deploy on cloud infrastructure for scalability.</p>
+          <div class="tech-stack">
+            <span class="badge">Python</span>
+            <span class="badge">scikit-learn</span>
+          </div>
+        </div>
+        <div class="links">
+          <a href="#"><i class="fa-solid fa-code"></i> In Development</a>
+        </div>
+      </div>
+    </div>
+    
+    <h3 class="terminal-prompt" style="margin: 30px 0 20px; color: var(--primary-color);">Full-Stack Development Projects</h3>    
+    <div class="projects-grid">
+      
+      <div class="terminal-card" data-category="web">
+        <header>Movie Management Application</header>
+        <div class="card-content">
+          <p>Full-stack .NET MVC app for managing a personal movie collection with filtering, sorting, and recommendation features.</p>
+          <div class="tech-stack">
+            <span class="badge">.NET MVC</span>
+            <span class="badge">C#</span>
+            <span class="badge">SQL Server</span>
+            <span class="badge">Bootstrap</span>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://github.com/Abdelhakime6/Cinema_List"><i class="fa-brands fa-github"></i> Repository</a>
+        </div>
+      </div>
+      
+      <div class="terminal-card" data-category="web">
+        <header>OSSFinder</header>
+        <div class="card-content">
+          <p>Web application to discover open-source projects on GitHub based on user skills and interests, encouraging contribution to the open-source community.</p>
+          <div class="tech-stack">
+            <span class="badge">Spring Boot</span>
+            <span class="badge">Thymeleaf</span>
+            <span class="badge">GitHub API</span>
+            <span class="badge">Java</span>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://github.com/Abdelhakime6/OSSFinder"><i class="fa-brands fa-github"></i> Repository</a>
+          <a href="#"><i class="fa-solid fa-code"></i> In Development</a>
+
+        </div>
+      </div>
+      
+      <div class="terminal-card" data-category="web">
+        <header>Blog Web App</header>
+        <div class="card-content">
+          <p>Platform built with Django for managing blog articles with role-based access control and content management system.</p>
+          <div class="tech-stack">
+            <span class="badge">Django</span>
+            <span class="badge">Python</span>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">Bootstrap</span>
+          </div>
+        </div>
+        <div class="links">
+          <a href="https://github.com/Abdelhakime6/E-News"><i class="fa-brands fa-github"></i> Repository</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-title">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h2>~$ education</h2>
+    </div>
+    
+    <ul class="timeline">
+      <li class="timeline-item">
+        <h3>2023 – Present</h3>
+        <h4>Diplôme en Ingénierie informatique et réseaux, option MIAGE</h4>
+        <p>École marocaine des sciences d'ingénieur</p>
+        <p>Focusing on software engineering, cloud computing, and information systems management.</p>
+      </li>
+      <li class="timeline-item">
+        <h3>2020 – 2023</h3>
+        <h4>Licence en Sciences Physiques, Electronique</h4>
+        <p>Faculté des sciences ben M'sik</p>
+        <p>Built a strong foundation in physics, electronics, and mathematical modeling that informs my approach to engineering problems.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="certifications">
+    <div class="section-title">
+      <i class="fa-solid fa-certificate"></i>
+      <h2>~$ certifications</h2>
+    </div>
+    
+    <div class="cert-grid">
+      <div class="cert-item">
+        <h4>AWS Cloud Technical Essentials</h4>
+        <div class="issuer">Amazon Web Services</div>
+        
+      </div>
+      
+      <div class="cert-item">
+        <h4>Deep Learning with Keras and TensorFlow</h4>
+        <div class="issuer">IBM</div>
+      </div>
+      
+      <div class="cert-item">
+        <h4>Java SE 17 Developer</h4>
+        <div class="issuer">Oracle</div>
+        <p>In Progress</p>
+      </div>
+      
+      <div class="cert-item">
+        <h4>Neural Networks and Deep Learning</h4>
+        <div class="issuer">DeepLearning.AI</div>
+      </div>
+      
+      <div class="cert-item">
+        <h4>Software Engineering: Design and Project Management</h4>
+        <div class="issuer">Coursera</div>
+      </div>
+      
+      <div class="cert-item">
+        <h4>React Basics</h4>
+        <div class="issuer">Meta</div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <section id="contact">
+    <div class="section-title">
+      <i class="fa-solid fa-paper-plane"></i>
+      <h2>~$ contact</h2>
+    </div>
+    <p>let's connect</p>    
+    <div class="contact-methods">
+      <a href="mailto:abdelhakimaouzou6@gmail.com" class="contact-method">
+        <i class="fa fa-envelope"></i>
+        <div>
+          <strong>Email</strong><br>
+          abdelhakimaouzou6@gmail.com
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/abdelhakim6/" class="contact-method" target="_blank">
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn</span>
+      
+      <a href="
