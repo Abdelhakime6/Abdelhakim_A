@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8" />
   <title>Abdelhakim A. | Software Engineer & Cloud Specialist</title>
   <meta name="description" content="Software engineering student specializing in cloud technologies, DevOps, and climate risk modeling based in Casablanca, Morocco.">
@@ -262,9 +263,35 @@
     }
     
     .profile-content {
-      flex: 1;
-    }
-    
+  flex: 1;
+  padding: 0 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+    .profile-content p,
+    .terminal-prompt {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 90%;
+  word-wrap: break-word;
+  margin: 0 auto 10px;
+  padding: 0 10px;
+}
+
+@media (min-width: 768px) {
+  .profile-content p,
+  .terminal-prompt {
+    font-size: 1.1rem;
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+
+
+
+
     .profile-title {
       font-size: 1.8em;
       margin-bottom: 10px;
@@ -304,28 +331,36 @@
       color: var(--primary-color);
     }
     
-    /* Contact section */
     .contact-methods {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    
-    .contact-method {
-      flex: 1 0 calc(50% - 15px);
-      min-width: 200px;
-      display: flex;
-      align-items: center;
-      padding: 15px;
-      background-color: #2d2d30;
-      border-radius: 8px;
-      transition: transform 0.2s;
-    }
-    
-    .contact-method:hover {
-      transform: translateY(-3px);
-    }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .contact-methods {
+    justify-content: flex-start;
+  }
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: #2c2c31;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.contact-method:hover {
+  background-color: #444;
+}
+
     
     .contact-method i {
       font-size: 24px;
@@ -437,7 +472,7 @@
     </div>
     <div class="profile-content">
       <div class="profile-title typing">Abdelhakim Aouzou</div>
-      <div class="terminal-prompt">Software Engineering Student | Focusing on Cloud and Devops engineering </div>
+      <div class="terminal-prompt">Software Engineering Student</div>
       <p>Based in Casablanca, Morocco</p>
       <p>👋 I'm a software engineering student with a strong foundation in full-stack development and a growing passion for cloud technologies and DevOps.</p>
       <p>Currently seeking: <span class="blink">_</span> Internship opportunities to develop my Cloud & DevOps skills</p>
